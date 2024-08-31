@@ -704,4 +704,4 @@ def update_donut(selected_value):
 
 #serve th dash app
 if __name__ == '__main__':
-     app.run_server(port="8091")
+     app.run_server()
