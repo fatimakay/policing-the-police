@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
+*{
+    font-family: "Inconsolata", monospace;
+
+}
+:root {
+    --text-color: #e8feff;
+    --purple-dark: #18172c;
+    --purple-medium: #4f4898;
+    --purple-light: #aea9f8;
+    --maroon: #69344b;
+    --pink: #b64693;
+    --white: #FFFFFF;
+    --blue-main: #16c1e6;
+    --blue-light: #96f0fe;
+    --blue2: #20accd;  /* shades of blue */
+    --blue3: #12829b;
+    --blue4: #055b78;
+    --royal-blue: #2747b8;
+    --blue-dark: #00243c;
+    --dark-background: #040812;
+    --red: #dd1e28;
+    overflow: auto;
+
+}
+
+body {
+    background-image: url('/assets/images/background.png');
+    background-size: cover;
+    color: var(--text-color);
+    font-family: "Inconsolata", monospace;
+    }
+p{
+    font-size: 14px;
+}
+
+h1{
+    font-size: 90px;
+    font-family: "Karla", sans-serif;
+    color: var(--text-color);
+    font-weight: bold;
+    text-shadow: 0 -10px 20px var(--royal-blue), 0 -18px 40px var(--royal-blue), var(--red) 2px 2px 0px, var(--red) 4px 4px 0px; 
+}
+h1:hover{
+    animation-name: pulse;
+}
+a{
+    text-decoration: none;
+    color: var(--blue-light) !important;
+}
+a:hover{
+    text-decoration: underline;
+}
+.page-title span{
+    font-size: 30px;
+    font-family: "Karla", sans-serif;
+    font-weight: bold;
+    color: var(--blue-light);
+    height: 1.3em; 
+    word-break: break-all;
+    width:0%;
+    overflow: hidden;
+    animation:t 4s linear alternate;
+    animation-fill-mode: forwards;
+}
+.page-title span:before {
+    content:" ";
+    display:inline-block;
+}
+
+.chart-title, .page-title, .animated-heading{
+  display:inline-flex;
+}
+.chart-title span{
+    font-weight: bold;
+    font-size: 18px;
+    word-break: break-all;
+    height: 1.25em;
+    width:0%;
+    overflow: hidden;
+    animation:t 2s 0.5s linear alternate;
+    animation-fill-mode: forwards;
+}
+.chart-title span:before {
+    content:" ";
+    display:inline-block;
+}
+@keyframes t{
+    90%,100% {width:100%}
+  }
+
+
+
+#tabs{
+    justify-content: center;
+}
+#tabs .tab {
+    background-color: var(--dark-background);
+    color: var(--text-color);
+    width: 25px;
+    border: none; 
+    } 
+.title .tab-content{
+    background-image: url(/assets/images/title-background.avif);
+    background-size: cover;
+}
+.card {
+    background: rgb(0,36,60);
+    background: radial-gradient(circle, rgba(0,36,60,1) 0%, rgba(4,8,18,1) 58%);
+    color: var(--blue-light);
+    border-radius: 0px;
+   
+}
+.card:hover {
+    border-color: rgba(0, 153, 255, 0.8);
+    box-shadow: 0 0 20px rgba(0, 153, 255, 0.7), 
+                0 0 40px rgba(0, 153, 255, 0.5);
+    transition: 0.2s ease-in-out;
+}
+.card-container{
+    border-left: 3px solid var(--blue-dark);
+    border-right: 3px solid var(--blue-dark);
+    border-bottom: 3px solid var(--blue-dark);
+    border-top: 20px solid var(--blue-dark);
+}
+
+.dropdown-year {
+    background-color: var(--dark-background); /* Background color */
+    color: var(--text-color);            /* Text color */
+}
+
+.dropdown-year .Select-menu-outer {
+    background-color: var(--dark-background); /* Background color of dropdown options */
+}
+
+.dropdown-year .Select-option {
+    color: var(--text-color); /* Text color of options */
+}
+
+.dropdown-year .Select-control {
+    background-color: var(--dark-background); /* Background color of the control */
+    color: #e8feff;            /* Text color */
+    border: 1px solid var(--royal-blue); /* Border color */
+}
+
+.dropdown-year .Select-placeholder {
+    color: var(--text-color); /* Placeholder text color */
+}
+
+.dropdown-year .Select-arrow-zone {
+    color: var(--text-color); /* Arrow color */
+}
+.has-value.Select--single>.Select-control .Select-value .Select-value-label, .has-value.is-pseudo-focused.Select--single>.Select-control .Select-value .Select-value-label{
+    color: var(--text-color); /* Arrow color */
+}
+.hazard-border {
+    border-top: 10px solid pink;
+    border-image: repeating-linear-gradient(
+      -55deg,
+      var(--blue-light),
+      var(--blue-light) 20px,
+      var(--blue-dark) 20px,
+    var(--blue-dark) 40px
+    ) 10;
+  }
+/* Override max-width for larger screens */
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1600px; /* Adjust this value as needed */
+    }
+    p{
+        font-size: 24px; 
+    }
+    .animated-heading span{
+        font-size: 31px;
+    }
+    .page-title span{
+        font-size: 38px;
+    }
+    .chart-title span{
+        font-size: 26px;
+    }
+}
