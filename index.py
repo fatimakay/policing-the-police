@@ -453,6 +453,7 @@ saf_fig.for_each_annotation(lambda a: a.update(text=a.text.split('=')[1], font=d
 app =dash.Dash( __name__, title='Policing the Police',  meta_tags=[
         {"name": "viewport", "content": "width=device-width, initial-scale=1"}
     ], external_stylesheets=[dbc.themes.BOOTSTRAP])
+server = app.server
 app.layout = dbc.Container(children=[
      dcc.Tabs(id='tabs', className='tabs mb-0', value='tab-1', children=[
          # ----- TITLE TAB -----
