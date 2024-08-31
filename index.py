@@ -704,4 +704,5 @@ def update_donut(selected_value):
 
 #serve th dash app
 if __name__ == '__main__':
-     app.run_server()
+     port = int(os.environ.get('PORT', 8050))  # Default to 8050 if PORT is not set
+     app.run_server(port=port, debug=True, use_reloader=False)
