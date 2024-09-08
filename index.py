@@ -32,19 +32,18 @@ color_scheme = {
 }
 
 '''----- 1. LOADING AND PREPROCESSING DATA ----- '''
-# url = 'https://stacks.stanford.edu/file/druid:yg821jf8611/yg821jf8611_pa_philadelphia_2020_04_01.csv.zip'
-# filename = 'pa_philadelphia_2020_04_01.csv'
-# r = requests.get(url)
-# z = zipfile.ZipFile(io.BytesIO(r.content))
-# z.extractall()
-# raw_phil = pd.read_csv(filename, sep=',')
-# pop_url = 'https://opendata.arcgis.com/api/v3/datasets/d0ac67bb117b42f39614bad23525a13e_0/downloads/data?format=csv&spatialRefId=4326'
-# pop = pd.read_csv(pop_url, index_col=0) #population data 
+url = 'https://stacks.stanford.edu/file/druid:yg821jf8611/yg821jf8611_pa_philadelphia_2020_04_01.csv.zip'
+filename = 'pa_philadelphia_2020_04_01.csv'
+r = requests.get(url)
+z = zipfile.ZipFile(io.BytesIO(r.content))
+z.extractall()
+raw_phil = pd.read_csv(filename, sep=',')
+pop_url = 'https://opendata.arcgis.com/api/v3/datasets/d0ac67bb117b42f39614bad23525a13e_0/downloads/data?format=csv&spatialRefId=4326'
+pop = pd.read_csv(pop_url, index_col=0) #population data 
 
 #If reading locally, comment out lines 34-40 and uncomment lines below
-
-raw_phil = pd.read_csv('data/pa_philadelphia_2020_04_01.csv')
-pop = pd.read_csv('data/Vital_Population_Cty.csv')
+# raw_phil = pd.read_csv('data/pa_philadelphia_2020_04_01.csv')
+# pop = pd.read_csv('data/Vital_Population_Cty.csv')
 
 raw_phil['date'] = pd.to_datetime(raw_phil['date'])
 raw_phil['year'] = raw_phil['date'].dt.year
