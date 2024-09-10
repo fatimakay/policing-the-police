@@ -41,7 +41,10 @@ raw_phil = pd.read_csv(filename, sep=',')
 pop_url = 'https://opendata.arcgis.com/api/v3/datasets/d0ac67bb117b42f39614bad23525a13e_0/downloads/data?format=csv&spatialRefId=4326'
 pop = pd.read_csv(pop_url, index_col=0) #population data 
 
-#If reading locally, comment out lines 34-40 and uncomment lines below
+''' 
+If reading locally, create a "data" folder in your project directory and download the datasets from the 
+above-mentioned URLs into this folder. Then, comment out lines 35-42 and uncomment the lines below.
+'''
 # raw_phil = pd.read_csv('data/pa_philadelphia_2020_04_01.csv')
 # pop = pd.read_csv('data/Vital_Population_Cty.csv')
 
@@ -704,7 +707,7 @@ def update_donut(selected_value):
     elif selected_value == 'arrest':
         return fig_arrest
 
-#serve th dash app
+#serve the dash app
 if __name__ == '__main__':
      port = int(os.environ.get('PORT', 8050))  # Default to 8050 if PORT is not set
-     app.run_server(port=port, debug=True, use_reloader=False)
+     app.run_server(port=port, use_reloader=False)
